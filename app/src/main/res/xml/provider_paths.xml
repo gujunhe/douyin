@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+<!--    <cache-path name="imagedata" path="imageData/"/>-->
+<!--    <cache-path name="videodata" path="videoData/"/>-->
+    <external-files-path name="imagedata" path="imageData/"/>
+    <external-files-path name="videodata" path="videoData/"/>
+    <external-files-path name="newmedia" path="newMedia/"/>
+</paths>

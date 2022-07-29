@@ -85,7 +85,7 @@ public class AppBottomBar extends BottomNavigationView {
             BottomNavigationMenuView menuView = (BottomNavigationMenuView) getChildAt(0);
             BottomNavigationItemView itemView = (BottomNavigationItemView) menuView.getChildAt(index);
             if(index==2)itemView.setIconSize(iconSize);
-            else itemView.setPadding(0,0,0,25);
+            else itemView.setPadding(0,0,0,27);
 
             if (TextUtils.isEmpty(tab.title)) {
                 int tintColor = TextUtils.isEmpty(tab.tintColor) ? Color.parseColor("#ff678f") : Color.parseColor(tab.tintColor);
