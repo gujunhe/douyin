@@ -1,7 +1,9 @@
 package com.qxy.douyin;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.bytedance.sdk.open.aweme.authorize.model.Authorization;
@@ -13,17 +15,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.qxy.douyin.databinding.ActivityMainBinding;
+import com.qxy.douyin.model.AccessToken;
 import com.qxy.douyin.utils.NavGraphBuilder;
+
+import okhttp3.FormBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private NavController navController;
     private ActivityMainBinding binding;
+    private SharedPreferences sharedPreferences;
+    private String TAG="MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +50,22 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         NavGraphBuilder.build(this, navController, fragment.getId());
 
         navView.setOnNavigationItemSelectedListener(this);
+        sharedPreferences=getSharedPreferences("user",MODE_PRIVATE);
+        if(sharedPreferences.getString("code","")=="") {
+            DouYinOpenApi douyinOpenApi = DouYinOpenApiFactory.create(this);
 
-        DouYinOpenApi douyinOpenApi = DouYinOpenApiFactory.create(this);
+            Authorization.Request request = new Authorization.Request();
+            request.scope = "user_info,trial.whitelist";                          // 用户授权时必选权限
+            request.state = "ww";                                 // 用于保持请求和回调的状态，授权请求后原样带回给第三方。
+            request.callerLocalEntry = "com.qxy.douyin.DouYinEntryActivity";
+            douyinOpenApi.authorize(request);
 
-        Authorization.Request request = new Authorization.Request();
-        request.scope = "user_info,trial.whitelist";                          // 用户授权时必选权限
-        request.state = "ww";                                 // 用于保持请求和回调的状态，授权请求后原样带回给第三方。
-        request.callerLocalEntry = "com.qxy.douyin.DouYinEntryActivity";
 
-        douyinOpenApi.authorize(request);
+        }
+
+
+
+
     }
 
     @Override
