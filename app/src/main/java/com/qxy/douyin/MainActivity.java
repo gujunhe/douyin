@@ -29,7 +29,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private NavController navController;
     private ActivityMainBinding binding;
-    private SharedPreferences sharedPreferences;
+
     private String TAG="MainActivity";
 
     @Override
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         NavGraphBuilder.build(this, navController, fragment.getId());
 
         navView.setOnNavigationItemSelectedListener(this);
-        sharedPreferences=getSharedPreferences("user",MODE_PRIVATE);
-        if(sharedPreferences.getString("code","")=="") {
+
+        if(MyApplication.code=="") {
             DouYinOpenApi douyinOpenApi = DouYinOpenApiFactory.create(this);
 
             Authorization.Request request = new Authorization.Request();
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
         }
+        Log.d(TAG,MyApplication.code+"///"+MyApplication.open_id+"///"+MyApplication.accesstoken);
 
 
 
