@@ -8,9 +8,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.qxy.douyin.databinding.FragmentHomeBinding;
+import com.qxy.douyin.model.UserInfo;
 import com.qxy.libnavannotation.FragmentDestination;
 
 @FragmentDestination(pageUrl = "main/tabs/home", asStarter = true)
@@ -26,8 +28,16 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+        homeViewModel.getUserInfo().observe(getViewLifecycleOwner(), new Observer<UserInfo.DataBean>() {
+            @Override
+            public void onChanged(UserInfo.DataBean userinfo) {
+                if(userinfo!=null)
+                {
+                    binding.setUserinfo(userinfo);
+                }
+            }
+        });
         return root;
     }
 

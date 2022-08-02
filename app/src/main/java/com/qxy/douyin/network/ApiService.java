@@ -4,6 +4,7 @@ package com.qxy.douyin.network;
 import android.app.DownloadManager;
 
 import com.qxy.douyin.model.AccessToken;
+import com.qxy.douyin.model.UserInfo;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -18,5 +19,9 @@ public interface ApiService {
     @Headers("Content-Type: application/x-www-form-urlencoded")
     @POST("oauth/access_token/")
     Call<AccessToken> getaccess_token(@Body RequestBody body);
+
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    @POST("oauth/userinfo/")
+    Call<UserInfo>getuserinfo(@Body RequestBody body);
 
 }
