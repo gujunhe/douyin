@@ -1,10 +1,14 @@
 package com.qxy.douyin;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.bytedance.sdk.open.aweme.authorize.model.Authorization;
 import com.bytedance.sdk.open.douyin.DouYinOpenApiFactory;
@@ -21,10 +25,7 @@ import com.qxy.douyin.databinding.ActivityMainBinding;
 import com.qxy.douyin.model.AccessToken;
 import com.qxy.douyin.utils.NavGraphBuilder;
 
-import okhttp3.FormBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private NavController navController;
@@ -38,6 +39,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            //设置状态栏为黑色
+            window.setStatusBarColor(Color.BLACK);
+        }
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each

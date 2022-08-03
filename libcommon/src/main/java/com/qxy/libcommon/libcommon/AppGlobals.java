@@ -1,4 +1,4 @@
-package com.qxy.libcommon.global;
+package com.qxy.libcommon.libcommon;
 
 import android.app.Application;
 

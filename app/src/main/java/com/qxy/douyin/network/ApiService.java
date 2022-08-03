@@ -12,6 +12,7 @@ import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
@@ -20,7 +21,7 @@ public interface ApiService {
     @POST("oauth/access_token/")
     Call<AccessToken> getaccess_token(@Body RequestBody body);
 
-    @Headers("Content-Type: application/x-www-form-urlencoded")
+    @Headers({"Content-Type: application/x-www-form-urlencoded"})
     @POST("oauth/userinfo/")
     Call<UserInfo>getuserinfo(@Body RequestBody body);
 

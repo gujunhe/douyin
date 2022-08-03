@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/qxy/app/src/main/res/layout/activity_login.xml" value="0.121875" />
         <entry key="..\:/qxy/app/src/main/res/layout/activity_main.xml" value="0.1403985507246377" />
         <entry key="..\:/qxy/app/src/main/res/layout/activity_publish.xml" value="0.1" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_home.xml" value="0.2669706180344478" />
+        <entry key="..\:/qxy/app/src/main/res/layout/fragment_my.xml" value="0.14944275582573455" />
         <entry key="..\:/qxy/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>

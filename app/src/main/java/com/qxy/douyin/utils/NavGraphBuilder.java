@@ -13,7 +13,7 @@ import androidx.navigation.fragment.FragmentNavigator;
 
 import com.qxy.douyin.model.Destination;
 import com.qxy.douyin.navigator.FixFragmentNavigator;
-import com.qxy.libcommon.global.AppGlobals;
+import com.qxy.libcommon.libcommon.AppGlobals;
 
 import java.util.HashMap;
 import java.util.Iterator;

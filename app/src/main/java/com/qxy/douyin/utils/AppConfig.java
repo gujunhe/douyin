@@ -8,14 +8,12 @@ import com.alibaba.fastjson.TypeReference;
 
 import com.qxy.douyin.model.BottomBar;
 import com.qxy.douyin.model.Destination;
-import com.qxy.libcommon.global.AppGlobals;
+import com.qxy.libcommon.libcommon.AppGlobals;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 
 public class AppConfig {
