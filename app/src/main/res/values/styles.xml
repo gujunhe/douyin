@@ -71,11 +71,13 @@
 
     <style name="active" parent="TextAppearance.AppCompat">
         <item name="android:textSize">19sp</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/color_000</item>
     </style>
 
     <style name="inActive" parent="TextAppearance.AppCompat">
         <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/color_999</item>
     </style>
 </resources>

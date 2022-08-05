@@ -1,5 +1,6 @@
 package com.qxy.douyin;
 
+import android.animation.ArgbEvaluator;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -17,14 +19,27 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.material.tabs.TabLayout;
+import com.qxy.douyin.adapter.TabAdapter;
 import com.qxy.douyin.databinding.ActivityMainBinding;
+import com.qxy.douyin.fragment.TabFragment;
 import com.qxy.douyin.model.AccessToken;
+import com.qxy.douyin.model.TabItemModel;
 import com.qxy.douyin.utils.NavGraphBuilder;
+import com.qxy.douyin.view.FullViewPager;
+import com.qxy.douyin.view.ScaleScrollView;
+import com.qxy.douyin.view.TitleLayout;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private ActivityMainBinding binding;
 
     private String TAG="MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             //设置状态栏为黑色
-            window.setStatusBarColor(Color.BLACK);
+            window.setStatusBarColor(Color.TRANSPARENT);
         }
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -62,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             DouYinOpenApi douyinOpenApi = DouYinOpenApiFactory.create(this);
 
             Authorization.Request request = new Authorization.Request();
-            request.scope = "user_info,trial.whitelist";                          // 用户授权时必选权限
+            request.scope = "user_info,trial.whitelist,fans.list,video.list,following.list";                          // 用户授权时必选权限
             request.state = "ww";                                 // 用于保持请求和回调的状态，授权请求后原样带回给第三方。
             request.callerLocalEntry = "com.qxy.douyin.DouYinEntryActivity";
             douyinOpenApi.authorize(request);
@@ -75,10 +91,39 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         navController.navigate(item.getItemId());
 
         return !TextUtils.isEmpty(item.getTitle());
     }
+
+//    @Override
+//    public void onScrollChange(NestedScrollView v, int x, int y, int ox, int oy) {
+//        if (null != tab1 && null != tab2 && null != titleLayout && null != statusView) {
+//            int distance = tab1.getTop() - titleLayout.getHeight() - statusView.getHeight();
+//            float ratio = v.getScaleY() * 1f / distance;
+//            if (distance <= v.getScrollY()) {
+//                ratio = 1;
+//                if (tab2.getVisibility() != View.VISIBLE) {
+//                    tab2.setVisibility(View.VISIBLE);
+//                    statusView.setBackgroundColor(colorPrimary);
+//                }
+//            } else {
+//                if (tab2.getVisibility() == View.VISIBLE) {
+//                    tab2.setVisibility(View.INVISIBLE);
+//                    statusView.setBackgroundColor(Color.TRANSPARENT);
+//                }
+//            }
+//            if (null == evaluator) {
+//                evaluator = new ArgbEvaluator();
+//            }
+//            titleLayout.setBackgroundColor((int) evaluator.evaluate(ratio, Color.TRANSPARENT, colorPrimary));
+//            titleLayout.setTitleColor((int) evaluator.evaluate(ratio, Color.TRANSPARENT, Color.WHITE));
+//        }
+//    }
+
+
+
 }
