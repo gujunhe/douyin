@@ -60,15 +60,15 @@
                                 android:layout_below="@id/banner" />
 
                             <com.google.android.material.tabs.TabLayout
-                                android:layout_below="@id/profilemoreLayout"
                                 android:id="@+id/tab1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="visible"
+                                android:layout_below="@id/profilemoreLayout"
+                                android:textSize="30sp"
 
+                                android:visibility="visible"
                                 app:tabGravity="fill"
                                 app:tabIndicatorColor="@color/black"
-                                android:textSize="30sp"
                                 app:tabMode="fixed"
                                 app:tabSelectedTextColor="@android:color/black"
                                 app:tabTextColor="@android:color/darker_gray" />

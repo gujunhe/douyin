@@ -23,6 +23,7 @@
         android:theme="@style/Theme.Douyin">
         <activity
             android:name=".ui.fans.FansListActivity"
+            android:launchMode="singleTask"
             android:exported="false" />
         <activity
             android:name=".ui.publish.PublishActivity"
