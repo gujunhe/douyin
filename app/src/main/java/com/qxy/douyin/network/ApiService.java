@@ -34,5 +34,5 @@ public interface ApiService {
     Call<Fans>getfans(@Header("Content-Type")String type, @Header("access-token")String accesstoken, @Query("open_id")String openid,@Query("cursor")int cursor,@Query("count")int count);
 
     @GET("/following/list/")
-    Call<Following>getfollowing(@Header("Content-Type")String type, @Header("access-token")String accesstoken, @Query("count")int count, @Query("openid")String openid, @Query("cursor")int cursor);
+    Call<Following>getfollowing(@Header("Content-Type")String type, @Header("access-token")String accesstoken, @Query("count")int count, @Query("open_id")String openid, @Query("cursor")int cursor);
 }
