@@ -4,8 +4,11 @@ package com.qxy.douyin.network;
 import android.app.DownloadManager;
 
 import com.qxy.douyin.model.AccessToken;
+import com.qxy.douyin.model.ClientToken;
 import com.qxy.douyin.model.Fans;
 import com.qxy.douyin.model.Following;
+import com.qxy.douyin.model.RankItem;
+import com.qxy.douyin.model.RankVersion;
 import com.qxy.douyin.model.UserInfo;
 
 import okhttp3.RequestBody;
@@ -35,4 +38,16 @@ public interface ApiService {
 
     @GET("/following/list/")
     Call<Following>getfollowing(@Header("Content-Type")String type, @Header("access-token")String accesstoken, @Query("count")int count, @Query("open_id")String openid, @Query("cursor")int cursor);
+
+    @POST("/oauth/client_token/")
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Call<ClientToken>getclientoken(@Body RequestBody body);
+
+    @GET("/discovery/ent/rank/version/")
+    Call<RankVersion>getrankversion(@Header("Content-Type")String contenttype, @Header("access-token")String clienttoken,@Query("cursor")int cursor,@Query("count")int count,@Query("type")String type);
+
+    @GET("/discovery/ent/rank/item/")
+    Call<RankItem>getrankitem(@Header("Content-Type")String contenttype, @Header("access-token")String clienttoken,@Query("type")String type,@Query("version")String version);
+
+
 }

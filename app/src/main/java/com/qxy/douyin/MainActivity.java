@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            //设置状态栏为黑色
+            //设置状态栏为透明
             window.setStatusBarColor(Color.TRANSPARENT);
         }
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             DouYinOpenApi douyinOpenApi = DouYinOpenApiFactory.create(this);
 
             Authorization.Request request = new Authorization.Request();
-            request.scope = "user_info,trial.whitelist,fans.list,video.list,following.list";                          // 用户授权时必选权限
+            request.scope = "user_info,trial.whitelist,fans.list,video.list,following.list,discovery.ent";                          // 用户授权时必选权限
             request.state = "ww";                                 // 用于保持请求和回调的状态，授权请求后原样带回给第三方。
             request.callerLocalEntry = "com.qxy.douyin.DouYinEntryActivity";
             douyinOpenApi.authorize(request);

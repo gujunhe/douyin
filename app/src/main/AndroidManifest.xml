@@ -22,9 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Douyin">
         <activity
-            android:name=".ui.fans.FansListActivity"
-            android:launchMode="singleTask"
+            android:name=".ui.rank.RankActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.fans.FansListActivity"
+            android:exported="false"
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.publish.PublishActivity"
             android:exported="false" />

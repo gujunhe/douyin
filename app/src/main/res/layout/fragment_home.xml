@@ -8,12 +8,22 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeFragment">
-        <com.qxy.libcommon.libcommon.view.EmptyView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        tools:context=".ui.home.HomeFragment"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/torank"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="榜单"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center_horizontal"
+            />
+<!--        <com.qxy.libcommon.libcommon.view.EmptyView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
+    </LinearLayout>
 </layout>
