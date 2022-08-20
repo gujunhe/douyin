@@ -22,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Douyin">
         <activity
+            android:name=".ui.videodetail.VideoDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.rank.RankActivity"
             android:exported="false" />
         <activity
