@@ -4,7 +4,6 @@ import android.animation.ArgbEvaluator;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.content.ContextCompat;
@@ -13,10 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -26,9 +23,9 @@ import com.qxy.douyin.R;
 import com.qxy.douyin.adapter.TabAdapter;
 import com.qxy.douyin.databinding.FragmentMyBinding;
 import com.qxy.douyin.fragment.TabFragment;
-import com.qxy.douyin.model.Fans;
 import com.qxy.douyin.model.TabItemModel;
 import com.qxy.douyin.model.UserInfo;
+import com.qxy.douyin.model.VideoList;
 import com.qxy.douyin.view.FullViewPager;
 import com.qxy.douyin.view.ScaleScrollView;
 import com.qxy.douyin.view.TitleLayout;
@@ -49,6 +46,7 @@ public class MyFragment extends Fragment {
     private View statusView;
     private  View root;
     private  String nickname;
+    private  List<VideoList.DataBean.ListBean> videoList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -79,6 +77,7 @@ public class MyFragment extends Fragment {
                             }
                         }
                     });
+
                 }
             }
         });
@@ -137,7 +136,7 @@ public class MyFragment extends Fragment {
 
     private List<TabItemModel> getTabs() {
         List<TabItemModel> tabs = new ArrayList<>();
-        tabs.add(new TabItemModel("作品", TabFragment.class.getName(), null));
+        tabs.add(new TabItemModel("作品", MyVideoFragment.class.getName(), null));
         tabs.add(new TabItemModel("私密", TabFragment.class.getName(), null));
         tabs.add(new TabItemModel("收藏", TabFragment.class.getName(), null));
         tabs.add(new TabItemModel("喜欢", TabFragment.class.getName(), null));

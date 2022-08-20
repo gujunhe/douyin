@@ -18,7 +18,9 @@
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_following_list_list.xml" value="0.55" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_my.xml" value="0.1" />
-        <entry key="..\:/qxy/app/src/main/res/layout/fragment_rank.xml" value="0.4466666666666667" />
+        <entry key="..\:/qxy/app/src/main/res/layout/fragment_my_video.xml" value="0.4466666666666667" />
+        <entry key="..\:/qxy/app/src/main/res/layout/fragment_my_video_list.xml" value="0.22" />
+        <entry key="..\:/qxy/app/src/main/res/layout/fragment_rank.xml" value="0.16666666666666666" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_rank_list.xml" value="0.2629757785467128" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_tab.xml" value="0.26545086119554206" />
         <entry key="..\:/qxy/app/src/main/res/layout/item_select.xml" value="0.14969604863221886" />

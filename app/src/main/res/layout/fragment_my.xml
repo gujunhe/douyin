@@ -49,15 +49,16 @@
                                 android:userinfo="@{userinfo}"
 
                                 />
+
                             <include
-                                layout="@layout/layout_profilemore"
                                 android:id="@+id/profilemoreLayout"
+                                layout="@layout/layout_profilemore"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fans="@{fans}"
-                                android:eventHandler="@{eventHandler}"
+                                android:layout_below="@id/banner"
                                 android:background="@drawable/round"
-                                android:layout_below="@id/banner" />
+                                android:eventHandler="@{eventHandler}"
+                                android:fans="@{fans}" />
 
                             <com.google.android.material.tabs.TabLayout
                                 android:id="@+id/tab1"
