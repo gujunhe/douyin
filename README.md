@@ -152,7 +152,7 @@ public interface RankItemDao {
 ## 录屏
 （影视榜单api超出限制，无法演示榜单版本切换）
 
-[video(video-eqqTLysg-1662106841512)(type-csdn)(url-https://live.csdn.net/v/embed/236293)(image-https://video-community.csdnimg.cn/vod-84deb4/907a20fc53454342a5e9dbc73acd80c7/snapshots/b4bcf811df0b4f1796ead0881aeb4e9d-00004.jpg?auth_key=4815706654-0-0-ef6677a552e9cdf1d16681073ed2936b)(title-演示demo)]
+[演示demo链接](https://qlk36jhayj.feishu.cn/docx/doxcnjjz49Ugj1FtVISeaMEWHtf#doxcnEyK8KKqwyGUy628ONNneIg)
 ## 核心功能截图
 ### 影视综艺榜单页面
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/4fc44a52f49f4d88a4686d416d819b0a.png)
