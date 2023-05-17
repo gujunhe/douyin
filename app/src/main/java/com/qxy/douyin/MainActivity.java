@@ -78,12 +78,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             DouYinOpenApi douyinOpenApi = DouYinOpenApiFactory.create(this);
 
             Authorization.Request request = new Authorization.Request();
-            request.scope = "user_info,trial.whitelist,fans.list,video.list,following.list,discovery.ent";                          // 用户授权时必选权限
+            request.scope = "user_info,trial.whitelist,fans.list,video.list,following.list,discovery.ent,video.search";                          // 用户授权时必选权限
             request.state = "ww";                                 // 用于保持请求和回调的状态，授权请求后原样带回给第三方。
             request.callerLocalEntry = "com.qxy.douyin.DouYinEntryActivity";
             douyinOpenApi.authorize(request);
-
-
         }
         Log.d(TAG,MyApplication.code+"///"+MyApplication.open_id+"///"+MyApplication.accesstoken);
 
@@ -98,32 +96,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         return !TextUtils.isEmpty(item.getTitle());
     }
-
-//    @Override
-//    public void onScrollChange(NestedScrollView v, int x, int y, int ox, int oy) {
-//        if (null != tab1 && null != tab2 && null != titleLayout && null != statusView) {
-//            int distance = tab1.getTop() - titleLayout.getHeight() - statusView.getHeight();
-//            float ratio = v.getScaleY() * 1f / distance;
-//            if (distance <= v.getScrollY()) {
-//                ratio = 1;
-//                if (tab2.getVisibility() != View.VISIBLE) {
-//                    tab2.setVisibility(View.VISIBLE);
-//                    statusView.setBackgroundColor(colorPrimary);
-//                }
-//            } else {
-//                if (tab2.getVisibility() == View.VISIBLE) {
-//                    tab2.setVisibility(View.INVISIBLE);
-//                    statusView.setBackgroundColor(Color.TRANSPARENT);
-//                }
-//            }
-//            if (null == evaluator) {
-//                evaluator = new ArgbEvaluator();
-//            }
-//            titleLayout.setBackgroundColor((int) evaluator.evaluate(ratio, Color.TRANSPARENT, colorPrimary));
-//            titleLayout.setTitleColor((int) evaluator.evaluate(ratio, Color.TRANSPARENT, Color.WHITE));
-//        }
-//    }
-
-
 
 }

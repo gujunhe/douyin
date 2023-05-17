@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ASMIdeaPluginConfiguration">
+    <asm skipDebug="false" skipFrames="false" skipCode="false" expandFrames="false" />
+    <groovy codeStyle="LEGACY" />
+  </component>
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
@@ -18,7 +22,7 @@
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_following_list.xml" value="0.15096251266464034" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_following_list_list.xml" value="0.55" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
-        <entry key="..\:/qxy/app/src/main/res/layout/fragment_my.xml" value="0.1" />
+        <entry key="..\:/qxy/app/src/main/res/layout/fragment_my.xml" value="0.25" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_my_video.xml" value="0.4466666666666667" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_my_video_list.xml" value="0.22" />
         <entry key="..\:/qxy/app/src/main/res/layout/fragment_rank.xml" value="0.16666666666666666" />

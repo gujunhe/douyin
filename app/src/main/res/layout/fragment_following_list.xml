@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.qxy.douyin.ui.fans.GenderConvert"/>
+        <variable
+            name="following"
+            type="com.qxy.douyin.model.Following.DataBean.ListBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            image="@{following.avatar}"
+            android:id="@+id/profilepicture"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="@dimen/text_margin"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+
+            android:id="@+id/nickname"
+            android:layout_alignTop="@id/profilepicture"
+            android:layout_toRightOf="@id/profilepicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="@{following.nickname}"
+            />
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/detail"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/profilepicture"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nickname"
+            android:text="@{following.country+following.province+following.city}"
+            />
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/profilepicture"
+            android:layout_below="@id/detail"
+            android:text="@{GenderConvert.GenderConvert(following.gender)}"
+            />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="rankitem"
+            type="com.qxy.douyin.model.RankItem.DataBean.ListBean" />
+        <import type="com.qxy.douyin.ui.rank.ArrayConvert"
+            />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/poster"
+            image="@{rankitem.poster}"
+            android:layout_width="95dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/text_margin"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginEnd="@dimen/text_margin"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/poster"
+            android:layout_toRightOf="@id/poster"
+            android:text="@{rankitem.name}"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/areas"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/poster"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:text="@{ArrayConvert.AreaConvert(rankitem.areas)}"
+            />
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/directors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/poster"
+            android:layout_below="@id/areas"
+            android:text="@{ArrayConvert.DirectorsConvert(rankitem.directors)}"
+            />
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/Actors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/poster"
+            android:layout_below="@id/directors"
+            android:text="@{ArrayConvert.ActorsConvert(rankitem.actors)}"
+            />
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/poster"
+            android:layout_below="@id/Actors"
+            android:text="@{ArrayConvert.TagConvert(rankitem.tags)}"
+            />
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/hot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/poster"
+            android:layout_below="@id/tag"
+            android:text="@{ArrayConvert.HotConvert(rankitem.hot)}"
+            />
+
+
+
+    </RelativeLayout>
+</layout>

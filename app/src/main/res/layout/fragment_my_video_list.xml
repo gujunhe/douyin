@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:name="com.qxy.douyin.ui.my.MyVideoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:spanCount="3"
+        app:layoutManager="GridLayoutManager"
+        tools:context=".ui.my.MyVideoFragment"
+        tools:listitem="@layout/fragment_my_video" />
+</layout>
